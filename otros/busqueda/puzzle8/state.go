@@ -41,6 +41,7 @@ func NewRandomState(movements int) State {
 		actions := state.sucessorActions()
 		index := rand.Intn(len(actions))
 		state.applyAction(actions[index])
+		state.deleteLastAction()
 	}
 
 	return state

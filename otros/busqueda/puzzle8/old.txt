@@ -2,15 +2,15 @@ goos: windows
 goarch: amd64
 pkg: github.com/cdgn-coding/inteligencia-artificial/otros/busqueda/puzzle8
 cpu: Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz
-BenchmarkCopySolver/Solving_Puzzle_with_5_movements-8         	    7843	    129353 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_57_movements-8        	       3	 395687167 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_15_movements-8        	       7	 151254343 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_39_movements-8        	       3	 353517533 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_13_movements-8        	     343	   4058934 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_14_movements-8        	     146	   8106503 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_87_movements-8        	       4	 276514075 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_43_movements-8        	       3	 434678267 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_77_movements-8        	       4	 317416400 ns/op
-BenchmarkCopySolver/Solving_Puzzle_with_39_movements#01-8     	       2	 551135700 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements-8         	  129612	      8742 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#01-8      	      27	  41620604 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#02-8      	    9907	    112557 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#03-8      	      21	  54787871 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#04-8      	    5475	    230809 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#05-8      	    3127	    395781 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#06-8      	       5	 241113160 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#07-8      	     739	   1655606 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#08-8      	       2	 523533350 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_0_movements#09-8      	      18	  64431983 ns/op
 PASS
-ok  	github.com/cdgn-coding/inteligencia-artificial/otros/busqueda/puzzle8	22.757s
+ok  	github.com/cdgn-coding/inteligencia-artificial/otros/busqueda/puzzle8	19.453s

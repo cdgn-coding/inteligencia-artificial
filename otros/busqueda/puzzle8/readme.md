@@ -27,16 +27,16 @@ Se implementaron ambos algoritmos mediante una misma interfaz:
 Los casos de prueba son exactamente iguales para ambas implementaciones, estos son generados en el momento de compilación del programa. Se encontró que la implementacion que muta el estado es mas eficiente en tiempo y memoria. Tomando CopySolver como la implementacion _old_ y MutationSolver como la _new_, vemos que hay una mejora sustancial, dado que aplicar una acción en el estado es menos costoso que clonarlo.
 
 ```
-name                                              old time/op  new time/op  delta
-CopySolver/Solving_Puzzle_with_5_movements-8       129µs ± 0%     8µs ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_57_movements-8      396ms ± 0%   178ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_15_movements-8      151ms ± 0%     0ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_39_movements-8      354ms ± 0%    28ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_13_movements-8     4.06ms ± 0%  0.20ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_14_movements-8     8.11ms ± 0%  0.15ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_87_movements-8      277ms ± 0%   179ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_43_movements-8      435ms ± 0%    15ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_77_movements-8      317ms ± 0%   419ms ± 0%     ~     (p=1.000 n=1+1)
-CopySolver/Solving_Puzzle_with_39_movements#01-8   551ms ± 0%     1ms ± 0%     ~     (p=1.000 n=1+1)
-[Geo mean]                                        67.3ms        3.6ms       -94.71%
+name                                             old time/op  new time/op   delta
+CopySolver/Solving_Puzzle_with_0_movements-8     8.74µs ± 0%   8.03µs ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#01-8  41.6ms ± 0%  176.7ms ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#02-8   113µs ± 0%    267µs ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#03-8  54.8ms ± 0%   23.9ms ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#04-8   231µs ± 0%    197µs ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#05-8   396µs ± 0%    130µs ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#06-8   241ms ± 0%    162ms ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#07-8  1.66ms ± 0%  12.93ms ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#08-8   524ms ± 0%    323ms ± 0%     ~     (p=1.000 n=1+1)
+CopySolver/Solving_Puzzle_with_0_movements#09-8  64.4ms ± 0%    0.7ms ± 0%     ~     (p=1.000 n=1+1)
+[Geo mean]                                       4.41ms        3.20ms       -27.40%
 ```
