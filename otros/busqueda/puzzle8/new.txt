@@ -1,0 +1,16 @@
+goos: windows
+goarch: amd64
+pkg: github.com/cdgn-coding/inteligencia-artificial/otros/busqueda/puzzle8
+cpu: Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz
+BenchmarkCopySolver/Solving_Puzzle_with_5_movements-8         	  129039	      8451 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_57_movements-8        	       6	 177699033 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_15_movements-8        	    4060	    299524 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_39_movements-8        	      46	  27967670 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_13_movements-8        	    5095	    200297 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_14_movements-8        	    9537	    149270 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_87_movements-8        	       6	 179085783 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_43_movements-8        	      87	  15392377 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_77_movements-8        	       3	 419239933 ns/op
+BenchmarkCopySolver/Solving_Puzzle_with_39_movements#01-8     	    1347	    744330 ns/op
+PASS
+ok  	github.com/cdgn-coding/inteligencia-artificial/otros/busqueda/puzzle8	18.135s
