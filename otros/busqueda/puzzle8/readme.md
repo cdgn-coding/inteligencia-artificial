@@ -1,5 +1,11 @@
 # 8 Puzzle deslizante
 
+| | |
+|-|-|
+| Estado | En progreso |
+| Pruebas unitarias | Si |
+| Cobertura | 86.2% |
+
 Este problema fue tomado del libro _Inteligencia Artificial. Un enfoque moderno_ por Peter Norvig y Stuart J. Russell. En el capítulo 3, ejercicio 3.2. La consigna es:
 
 > Implemente dos versiones de la función sucesor para el 8-puzle: uno que genere
