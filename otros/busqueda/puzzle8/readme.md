@@ -6,7 +6,9 @@
 | Pruebas unitarias | Si |
 | Cobertura | 86.2% |
 
-Este problema fue tomado del libro _Inteligencia Artificial. Un enfoque moderno_ por Peter Norvig y Stuart J. Russell. En el capítulo 3, ejercicio 3.2. La consigna es:
+## Consigna
+
+Este problema fue tomado del libro _Inteligencia Artificial. Un enfoque moderno_ por Peter Norvig y Stuart J. Russell. En el capítulo 3, ejercicio 3.2.
 
 > Implemente dos versiones de la función sucesor para el 8-puzle: uno que genere
 todos los sucesores a la vez copiando y editando la estructura de datos del 8-puzle, y otro
@@ -15,7 +17,14 @@ tamente (haciendo las modificaciones necesarias). Escriba versiones de la búsqu
 primero en profundidad con profundidad iterativa que use estas funciones y compare sus
 rendimientos.
 
-El resultado es que la implementacion que muta el estado s mas eficiente en tiempo y memoria. Tomando CopySolver como la implementacion _old_ y MutationSolver como la _new_, vemos que hay una mejora sustancial dado que aplicar una acción en el estado es menos costoso que clonarlo.
+## Solución
+
+Se implementaron ambos algoritmos mediante una misma interfaz:
+
+* [CopySolver](./copy_solver.go)
+* [MutationSolver](./mutation_solver.go)
+
+Los casos de prueba son exactamente iguales para ambas implementaciones, estos son generados en el momento de compilación del programa. Se encontró que la implementacion que muta el estado es mas eficiente en tiempo y memoria. Tomando CopySolver como la implementacion _old_ y MutationSolver como la _new_, vemos que hay una mejora sustancial, dado que aplicar una acción en el estado es menos costoso que clonarlo.
 
 ```
 name                                              old time/op  new time/op  delta
