@@ -74,19 +74,19 @@ func TestMutationSolverThreeMovementsCase(test *testing.T) {
 func TestMutationSolverPresetStates(test *testing.T) {
 	var solver Puzzle8Solver = MutationSolver{}
 	var solution State
-	for _, input := range TestStates {
-		solution, _ = solver.Solve(input)
-		assert.True(test, solution.IsSolved(), fmt.Sprintf("Expected %s to found a solution", input.hash()))
+	for _, fixture := range fixtures {
+		solution, _ = solver.Solve(fixture.state)
+		assert.True(test, solution.IsSolved(), fmt.Sprintf("Expected %s to found a solution", fixture.state.hash()))
 	}
 }
 
 func BenchmarkMutationSolver(b *testing.B) {
 	rand.Seed(42)
 	var solver Puzzle8Solver = MutationSolver{}
-	for _, input := range TestStates {
-		b.Run(fmt.Sprintf("Solving Puzzle with %d movements", len(input.AppliedActions)), func(b *testing.B) {
+	for _, fixture := range fixtures {
+		b.Run(fmt.Sprintf("Solving Puzzle with %d movements", fixture.movements), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				solver.Solve(input)
+				solver.Solve(fixture.state)
 			}
 		})
 	}

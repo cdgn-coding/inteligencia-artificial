@@ -47,21 +47,6 @@ func NewRandomState(movements int) State {
 	return state
 }
 
-func generateStates(size int, maxMovements int) []State {
-	rand.Seed(42)
-	var table []State = make([]State, size)
-	var movements int
-
-	for i := 0; i < size; i++ {
-		movements = rand.Intn(maxMovements)
-		table[i] = NewRandomState(movements)
-	}
-
-	return table
-}
-
-var TestStates []State = generateStates(10, 100)
-
 func (state State) peek(position Position) int {
 	return state.Board[position.X][position.Y]
 }
