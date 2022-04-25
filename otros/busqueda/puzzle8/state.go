@@ -1,6 +1,9 @@
 package puzzle8
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type State struct {
 	Board          [3][3]int
@@ -26,6 +29,37 @@ func NewState(board [3][3]int) State {
 		AppliedActions: []Action{},
 	}
 }
+
+func NewRandomState(movements int) State {
+	state := NewState([3][3]int{
+		{0, 1, 2},
+		{3, 4, 5},
+		{6, 7, 8},
+	})
+
+	for i := 0; i < movements; i++ {
+		actions := state.sucessorActions()
+		index := rand.Intn(len(actions))
+		state.applyAction(actions[index])
+	}
+
+	return state
+}
+
+func generateStates(size int, maxMovements int) []State {
+	rand.Seed(42)
+	var table []State = make([]State, size)
+	var movements int
+
+	for i := 0; i < size; i++ {
+		movements = rand.Intn(maxMovements)
+		table[i] = NewRandomState(movements)
+	}
+
+	return table
+}
+
+var TestStates []State = generateStates(10, 100)
 
 func (state State) peek(position Position) int {
 	return state.Board[position.X][position.Y]
@@ -94,4 +128,18 @@ func (state *State) applyAction(action Action) {
 	state.assign(oldBlank, movingValue)
 	state.AppliedActions = append(state.AppliedActions, action)
 	state.Blank = newBlank
+}
+
+func (state *State) lastAction() Action {
+	return state.AppliedActions[len(state.AppliedActions)-1]
+}
+
+func (state *State) deleteLastAction() {
+	state.AppliedActions = state.AppliedActions[0 : len(state.AppliedActions)-1]
+}
+
+func (state *State) revertLastAction() {
+	state.applyAction(state.lastAction().Inverse())
+	state.deleteLastAction()
+	state.deleteLastAction()
 }

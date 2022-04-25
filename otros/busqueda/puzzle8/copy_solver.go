@@ -2,7 +2,7 @@ package puzzle8
 
 type CopySolver struct{}
 
-func (solver CopySolver) Solve(state State, depthLimit int) State {
+func (solver CopySolver) limitedDepthFirstSearch(state State, depthLimit int) (State, *SolverError) {
 	var stateStack stack = []State{}
 	stateStack.Push(state)
 
@@ -19,7 +19,7 @@ func (solver CopySolver) Solve(state State, depthLimit int) State {
 		visitedStates[currentState.hash()] = true
 
 		if currentState.IsSolved() {
-			return currentState
+			return currentState, nil
 		}
 
 		if currentDepth == depthLimit {
@@ -33,5 +33,14 @@ func (solver CopySolver) Solve(state State, depthLimit int) State {
 		}
 	}
 
-	panic("No solution found")
+	return state, &SolverError{"No solution found"}
+}
+
+func (solver CopySolver) Solve(state State) (State, *SolverError) {
+	for i := 1; ; i += 5 {
+		solution, err := solver.limitedDepthFirstSearch(state, i)
+		if err == nil {
+			return solution, nil
+		}
+	}
 }
